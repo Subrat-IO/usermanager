@@ -15,7 +15,7 @@ Follow these steps to set up and run the application locally.
 
 ### Clone the repository
 ```bash
-git clone https://github.com/YOUR-USERNAME/usermanager.git
+git clone https://github.com/Subrat-IO/usermanager.git
 cd usermanager
 ```
 
