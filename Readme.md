@@ -143,7 +143,7 @@ git commit -m "Implemented Flask API and MySQL setup"
 
 ### Add remote GitHub repository
 ```bash
-git remote add origin https://github.com/YOUR-USERNAME/usermanager.git
+git remote add origin https://github.com/Subrat-Io/usermanager.git
 ```
 
 ### Push the branch
