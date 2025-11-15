@@ -4,14 +4,14 @@ from mysql.connector import Error
 
 app = Flask(__name__)
 
-# 🧠 Database connection
+
 def get_db_connection():
     try:
         connection = mysql.connector.connect(
-            host="localhost",        # Flask runs locally, MySQL runs on Docker (localhost:3306)
+            host="localhost",        
             user="root",
-            password="Subrat@123",   # your Docker MySQL password
-            database="users"         # your DB name (created automatically when running container)
+            password="Subrat@123",   
+            database="users"        
         )
         return connection
     except Error as e:
@@ -19,13 +19,13 @@ def get_db_connection():
         return None
 
 
-# 🔹 Route 1: Simple hello route
+
 @app.route("/hello")
 def hello():
     return "Hello World!"
 
 
-# 🔹 Route 2: Show all users
+
 @app.route("/users")
 def users():
     conn = get_db_connection()
@@ -37,7 +37,6 @@ def users():
     return render_template("users.html", users=data)
 
 
-# 🔹 Route 3: Add new user
 @app.route("/new_user", methods=["GET", "POST"])
 def new_user():
     if request.method == "POST":
@@ -58,7 +57,6 @@ def new_user():
     return render_template("new_user.html")
 
 
-# 🔹 Route 4: User details by ID
 @app.route("/users/<int:id>")
 def user_details(id):
     conn = get_db_connection()
@@ -72,6 +70,6 @@ def user_details(id):
     return render_template("user_details.html", user=user)
 
 
-# 🚀 Run app
+
 if __name__ == "__main__":
     app.run(debug=True)
